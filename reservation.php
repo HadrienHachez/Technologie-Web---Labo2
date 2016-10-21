@@ -3,15 +3,14 @@
 	require ('traveler.php');
 	require ('holyday.php');
 
-	$nb_travelers = 3;
+	$nb_travelers = 0;
 	$destination = "";
 	$insurance = false;
 
-	//Holiday exist ?
-	//If not, Holiday is created
-	if(!empty($_SESSION['info']))
+	// Load existing travel if travel there is
+	if(!empty($_SESSION['travel']))
 	{
-		$travel = unserialize($_SESSION['info']);
+		$travel = unserialize($_SESSION['travel']);
 	}
 	else
 	{
